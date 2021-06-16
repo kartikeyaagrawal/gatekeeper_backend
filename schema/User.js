@@ -1,8 +1,8 @@
 // import mongoose from "mongoose";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const uri =
-	"mongodb+srv://kartik:littlehearts@cluster0.khsbi.mongodb.net/User?retryWrites=true&w=majority";
+const env = require("dotenv").config();
+const uri = process.env.mongoid;
 mongoose.connect(uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
