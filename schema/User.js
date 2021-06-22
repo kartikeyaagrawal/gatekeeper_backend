@@ -1,27 +1,15 @@
-// import mongoose from "mongoose";
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const env = require("dotenv").config();
-const uri = process.env.mongoid;
-mongoose.connect(uri, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-	console.log("db working");
-});
+var validator = require("email-validator");
 
-const userLoginSchema = new Schema({
-	email: String, // String is shorthand for {type: String}
-	password: String,
-});
-const User = mongoose.model("User", userLoginSchema);
 
-const kartik = new User({ email: "kartik@gmial.co", password: "hihihih" });
-kartik.save(function (err, kartik) {
-	if (err) return console.error(err);
-	// kartik.speak();
-	console.log("succesfully done");
-});
+function UserLogin(email, pass) {
+	this.email = email;
+	this.pass = pass;
+}
+UserLogin.prototype.checkValidity = function () {
+	return validator.validate(this.email);
+};
+UserLogin.prototype.checkValidity = function () {
+	return validator.validate(this.email);
+};
+
+module.export = UserLogin;
