@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const Message = require("./schema/Msg");
+const Message = require("./schema/MsgToUser");
 
 const uri =
 	"mongodb+srv://kartik:littlehearts@cluster0.khsbi.mongodb.net/User?retryWrites=true&w=majority";

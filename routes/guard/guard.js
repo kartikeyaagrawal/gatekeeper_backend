@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const Message = require("../../schema/Msg");
+const Message = require("../../schema/MsgToUser");
 // session middleware
 //session.end
 

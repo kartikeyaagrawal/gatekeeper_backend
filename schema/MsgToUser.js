@@ -6,7 +6,7 @@ class Message {
 	}
 	async addToDb() {
 		this.cleanup();
-		const msg = require("../db").db("User").collection("msg");
+		const msg = require("../db").db("User").collection("msgToUser");
 		var doneSignal;
 		console.log("ADDING TO DB ");
 		console.log(this.data);
@@ -16,7 +16,7 @@ class Message {
 			console.log(e);
 		}
 
-		console.log(doneSignal);
+		// console.log(doneSignal);
 		console.log("done");
 	}
 }
@@ -26,7 +26,7 @@ Message.prototype.cleanup = function () {
 		flatNo: this.data.flatNo,
 		message: this.data.message,
 	};
-	console.log(this.data);
+	// console.log(this.data);
 	console.log("cleanup done");
 };
 
