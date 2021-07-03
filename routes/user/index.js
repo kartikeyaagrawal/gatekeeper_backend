@@ -2,11 +2,7 @@ var express = require("express");
 var router = express.Router();
 var User = require("../../schema/User");
 /* GET home page. */
-router.use("/", (req, res, next) => {
-	// console.log(req.body);
-	console.log("middlewate");
-next()
-});
+
 router.get("/", function (req, res, next) {
 	// res.send({ hello: "hello" });
 	// var abc = new User("kartik", "password");
