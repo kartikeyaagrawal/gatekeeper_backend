@@ -6,7 +6,7 @@ var logger = require("morgan");
 var cors = require("cors");
 require("dotenv").config();
 
-var indexRouter = require("./routes/user/index");
+var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/user/users");
 var guardRouter = require("./routes/guard/guard");
 // const { get } = require("./routes/user/index");
@@ -37,6 +37,7 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
 	// set locals, only providing error in development
 	res.locals.message = err.message;
+	console.log("error handelling");
 	res.locals.error = req.app.get("env") === "development" ? err : {};
 
 	// render the error page

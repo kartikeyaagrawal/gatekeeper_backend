@@ -17,6 +17,15 @@ router.use("/", function (req, res, next) {
 router.get("/", function (req, res, next) {
 	res.render("index", { title: "Express" });
 });
+router.get("/msg", async function (req, res, next) {
+	let arr = [
+		{
+			name: "kartik",
+		},
+		{ name: "shit" },
+	];
+	res.send(arr);
+});
 router.post("/", (req, res) => {
 	console.log(req.body);
 	var msg = new Message(req);
